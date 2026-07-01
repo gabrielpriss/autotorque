@@ -8,6 +8,7 @@ import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import Location from "@/components/Location";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -42,14 +43,14 @@ const Index = () => {
         <main id="conteudo">
           <Hero />
           <Services />
-          <CarCarousel />
           <SocialProof />
+          <CarCarousel />
           <About />
           <FAQ />
           <Location />
         </main>
         <Footer />
-        
+        <WhatsAppFloat />
       </div>
     </>
   );

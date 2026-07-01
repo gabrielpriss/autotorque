@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
-import { whatsappLink, mapsLink, mapsEmbed, SITE } from "@/lib/site";
+import { whatsappLink, mapsEmbed, SITE } from "@/lib/site";
 
 const Location = () => {
   const whatsapp = whatsappLink();
@@ -106,7 +106,7 @@ const Location = () => {
                 </div>
               </div>
 
-              {/* CTAs */}
+              {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Button
                   variant="whatsapp"
@@ -115,14 +115,6 @@ const Location = () => {
                 >
                   <WhatsAppIcon className="w-4 h-4" />
                   Falar com Atendente
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => window.open(mapsLink, "_blank")}
-                >
-                  <Navigation className="w-4 h-4" />
-                  Como Chegar
                 </Button>
               </div>
             </div>

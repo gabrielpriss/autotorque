@@ -1,5 +1,5 @@
 import { Phone, MapPin, Globe } from "lucide-react";
-import { whatsappLink, mapsLink, SITE } from "@/lib/site";
+import { whatsappLink, mapsLink, addressShort, SITE } from "@/lib/site";
 import logoAutotorque from "@/assets/logo-autotorque.png";
 
 const Footer = () => {
@@ -74,7 +74,7 @@ const Footer = () => {
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <MapPin className="w-4 h-4" />
-                  {SITE.address.street} - {SITE.address.city}
+                  {addressShort}
                 </a>
               </li>
               <li>
@@ -93,7 +93,18 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.</p>
+          <p>
+            © {new Date().getFullYear()} {SITE.name}.{" "}
+            <a
+              href="https://conceitop.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+            >
+              Todos os direitos reservados
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, ChevronDown } from "lucide-react";
+import { MapPin, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
-import { whatsappLink, mapsLink, SITE } from "@/lib/site";
+import { whatsappLink, mapsLink, addressShort } from "@/lib/site";
 import heroBg from "@/assets/autotorque-fachada.jpg";
 
 const Hero = () => {
@@ -91,8 +91,8 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
-              <Phone className="w-4 h-4" />
-              {SITE.phoneDisplay}
+              <WhatsAppIcon className="w-4 h-4" />
+              Entre em Contato
             </a>
             <a
               href={mapsLink}
@@ -101,7 +101,7 @@ const Hero = () => {
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <MapPin className="w-4 h-4" />
-              {SITE.address.street} - {SITE.address.city}
+              {addressShort}
             </a>
           </motion.div>
         </motion.div>

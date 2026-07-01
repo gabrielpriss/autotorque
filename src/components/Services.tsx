@@ -10,6 +10,9 @@ import {
   Fuel,
   Zap,
 } from "lucide-react";
+import { Button } from "./ui/button";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
+import { whatsappLink } from "@/lib/site";
 
 import servicoFreios from "@/assets/servico-freios.jpg";
 import servicoMotor from "@/assets/servico-motor-novo.jpg";
@@ -112,8 +115,14 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <motion.div
+            <motion.a
               key={service.title}
+              href={whatsappLink(
+                `Olá! Gostaria de um orçamento para o serviço de ${service.title}.`
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Solicitar orçamento de ${service.title} pelo WhatsApp`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -160,9 +169,36 @@ const Services = () => {
                   </p>
                 </div>
               )}
-            </motion.div>
+            </motion.a>
           ))}
         </div>
+
+        {/* CTA final da seção */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-14"
+        >
+          <p className="text-muted-foreground mb-4">
+            Não encontrou o que precisa? Fale com a gente e traga seu veículo.
+          </p>
+          <Button
+            variant="whatsapp"
+            size="lg"
+            onClick={() =>
+              window.open(
+                whatsappLink(
+                  "Olá! Gostaria de um orçamento para um serviço no meu veículo."
+                ),
+                "_blank"
+              )
+            }
+          >
+            <WhatsAppIcon className="w-5 h-5" />
+            Solicitar Orçamento
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

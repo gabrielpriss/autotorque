@@ -17,6 +17,9 @@ export const SITE = {
   geo: { lat: -28.4713, lng: -49.0145 },
 } as const;
 
+/** Endereço curto para exibição inline (com UF). */
+export const addressShort = `${SITE.address.street} - ${SITE.address.city}, ${SITE.address.state}`;
+
 const DEFAULT_WHATSAPP_TEXT = "Olá! Gostaria de agendar um serviço.";
 
 /**

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Award, Star } from "lucide-react";
 import { Button } from "./ui/button";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
+import { whatsappLink } from "@/lib/site";
 
 import importadoDiscovery from "@/assets/importado-discovery.jpg";
 import importadoMercedes from "@/assets/importado-mercedes.jpg";
@@ -243,6 +245,33 @@ const CarCarousel = () => {
               </div>
             </motion.div>
           </div>
+        </motion.div>
+
+        {/* CTA final da seção */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <p className="text-muted-foreground mb-4">
+            Seu importado ou nacional merece cuidado especializado.
+          </p>
+          <Button
+            variant="whatsapp"
+            size="lg"
+            onClick={() =>
+              window.open(
+                whatsappLink(
+                  "Olá! Tenho um veículo e gostaria de agendar um atendimento especializado na Auto Torque."
+                ),
+                "_blank"
+              )
+            }
+          >
+            <WhatsAppIcon className="w-5 h-5" />
+            Agendar Atendimento
+          </Button>
         </motion.div>
       </div>
     </section>
