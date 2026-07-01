@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
-import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { whatsappLink, mapsEmbed, SITE } from "@/lib/site";
 
 const Location = () => {
@@ -108,14 +108,10 @@ const Location = () => {
 
               {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <Button
-                  variant="whatsapp"
-                  size="lg"
-                  onClick={() => window.open(whatsapp, "_blank")}
-                >
+                <WhatsAppCTA href={whatsapp} source="localizacao" variant="whatsapp" size="lg">
                   <WhatsAppIcon className="w-4 h-4" />
                   Falar com Atendente
-                </Button>
+                </WhatsAppCTA>
               </div>
             </div>
           </motion.div>

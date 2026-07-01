@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, Award, Clock, Users } from "lucide-react";
-import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { whatsappLink } from "@/lib/site";
 import oficinaBancada from "@/assets/oficina-bancada.jpg";
 import oficinaFerramentas from "@/assets/oficina-ferramentas.jpg";
@@ -164,21 +164,17 @@ const About = () => {
           <p className="text-muted-foreground mb-4">
             Fale diretamente com o Adriano e agende seu atendimento.
           </p>
-          <Button
+          <WhatsAppCTA
+            href={whatsappLink(
+              "Olá, Adriano! Conheci a Auto Torque Mecânica pelo site e gostaria de agendar um atendimento."
+            )}
+            source="sobre"
             variant="whatsapp"
             size="lg"
-            onClick={() =>
-              window.open(
-                whatsappLink(
-                  "Olá, Adriano! Conheci a Auto Torque Mecânica pelo site e gostaria de agendar um atendimento."
-                ),
-                "_blank"
-              )
-            }
           >
             <WhatsAppIcon className="w-5 h-5" />
             Falar com o Adriano
-          </Button>
+          </WhatsAppCTA>
         </motion.div>
       </div>
     </section>

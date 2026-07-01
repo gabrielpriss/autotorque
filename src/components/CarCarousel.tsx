@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Award, Star } from "lucide-react";
 import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { whatsappLink } from "@/lib/site";
 
 import importadoDiscovery from "@/assets/importado-discovery.jpg";
@@ -257,21 +258,17 @@ const CarCarousel = () => {
           <p className="text-muted-foreground mb-4">
             Seu importado ou nacional merece cuidado especializado.
           </p>
-          <Button
+          <WhatsAppCTA
+            href={whatsappLink(
+              "Olá! Tenho um veículo e gostaria de agendar um atendimento especializado na Auto Torque."
+            )}
+            source="excelencia"
             variant="whatsapp"
             size="lg"
-            onClick={() =>
-              window.open(
-                whatsappLink(
-                  "Olá! Tenho um veículo e gostaria de agendar um atendimento especializado na Auto Torque."
-                ),
-                "_blank"
-              )
-            }
           >
             <WhatsAppIcon className="w-5 h-5" />
             Agendar Atendimento
-          </Button>
+          </WhatsAppCTA>
         </motion.div>
       </div>
     </section>

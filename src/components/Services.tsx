@@ -10,8 +10,8 @@ import {
   Fuel,
   Zap,
 } from "lucide-react";
-import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { whatsappLink } from "@/lib/site";
 
 import servicoFreios from "@/assets/servico-freios.jpg";
@@ -183,21 +183,17 @@ const Services = () => {
           <p className="text-muted-foreground mb-4">
             Não encontrou o que precisa? Fale com a gente e traga seu veículo.
           </p>
-          <Button
+          <WhatsAppCTA
+            href={whatsappLink(
+              "Olá! Gostaria de um orçamento para um serviço no meu veículo."
+            )}
+            source="servicos"
             variant="whatsapp"
             size="lg"
-            onClick={() =>
-              window.open(
-                whatsappLink(
-                  "Olá! Gostaria de um orçamento para um serviço no meu veículo."
-                ),
-                "_blank"
-              )
-            }
           >
             <WhatsAppIcon className="w-5 h-5" />
             Solicitar Orçamento
-          </Button>
+          </WhatsAppCTA>
         </motion.div>
       </div>
     </section>

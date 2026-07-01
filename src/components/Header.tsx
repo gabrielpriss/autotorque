@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { whatsappLink } from "@/lib/site";
 import logoAutotorque from "@/assets/logo-autotorque.png";
 
@@ -62,14 +62,10 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button
-              variant="hero"
-              size="sm"
-              onClick={() => window.open(whatsapp, "_blank")}
-            >
+            <WhatsAppCTA href={whatsapp} source="header-desktop" variant="hero" size="sm">
               <WhatsAppIcon className="w-4 h-4" />
               Falar com Atendente
-            </Button>
+            </WhatsAppCTA>
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,15 +95,16 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button
+              <WhatsAppCTA
+                href={whatsapp}
+                source="header-mobile"
                 variant="whatsapp"
                 size="sm"
-                onClick={() => window.open(whatsapp, "_blank")}
                 className="mt-2"
               >
                 <WhatsAppIcon className="w-4 h-4" />
                 Falar com Atendente
-              </Button>
+              </WhatsAppCTA>
             </div>
           </motion.nav>
         )}

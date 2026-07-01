@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import GoogleReviews from "./GoogleReviews";
-import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { whatsappLink } from "@/lib/site";
 
 const stats = [
@@ -62,21 +62,17 @@ const SocialProof = () => {
           <p className="text-muted-foreground mb-4">
             Faça parte de quem confia na Auto Torque Mecânica.
           </p>
-          <Button
+          <WhatsAppCTA
+            href={whatsappLink(
+              "Olá! Vi as avaliações no site e gostaria de agendar um serviço."
+            )}
+            source="depoimentos"
             variant="whatsapp"
             size="lg"
-            onClick={() =>
-              window.open(
-                whatsappLink(
-                  "Olá! Vi as avaliações no site e gostaria de agendar um serviço."
-                ),
-                "_blank"
-              )
-            }
           >
             <WhatsAppIcon className="w-5 h-5" />
             Falar com Atendente
-          </Button>
+          </WhatsAppCTA>
         </motion.div>
       </div>
     </section>

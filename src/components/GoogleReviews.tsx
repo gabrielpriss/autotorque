@@ -142,13 +142,10 @@ const GoogleReviews = () => {
                 {TOTAL} avaliações
               </p>
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => window.open(mapsLink, "_blank")}
-              className="shrink-0"
-            >
-              Avaliar
+            <Button variant="outline" size="sm" asChild className="shrink-0">
+              <a href={mapsLink} target="_blank" rel="noopener noreferrer">
+                Avaliar
+              </a>
             </Button>
           </div>
         </div>

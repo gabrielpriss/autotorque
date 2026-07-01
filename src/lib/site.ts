@@ -28,6 +28,22 @@ const DEFAULT_WHATSAPP_TEXT = "Olá! Gostaria de agendar um serviço.";
 export const whatsappLink = (text: string = DEFAULT_WHATSAPP_TEXT): string =>
   `https://wa.me/${SITE.phoneRaw}?text=${encodeURIComponent(text)}`;
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
+/**
+ * Dispara um evento no dataLayer do GTM ao clicar em um CTA de WhatsApp,
+ * permitindo configurar a tag de conversão pelo evento "whatsapp_click".
+ */
+export const trackWhatsAppClick = (source: string): void => {
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "whatsapp_click", cta_source: source });
+};
+
 // Query do Google Maps incluindo o NOME da empresa — assim o Maps vincula
 // automaticamente ao perfil do Google Meu Negócio (e não apenas ao endereço).
 const MAPS_QUERY = encodeURIComponent(

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { whatsappLink, mapsLink, addressShort } from "@/lib/site";
 import heroBg from "@/assets/autotorque-fachada.jpg";
 
@@ -64,15 +65,16 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <Button
+            <WhatsAppCTA
+              href={whatsapp}
+              source="hero"
               variant="whatsapp"
               size="xl"
-              onClick={() => window.open(whatsapp, "_blank")}
               className="group"
             >
               <WhatsAppIcon className="w-5 h-5 group-hover:animate-pulse" />
               Falar com Atendente
-            </Button>
+            </WhatsAppCTA>
             <Button variant="outline" size="xl" asChild>
               <a href="#servicos">Ver Serviços</a>
             </Button>
