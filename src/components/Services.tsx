@@ -28,6 +28,12 @@ import servicoSuspensao from "@/assets/servico-suspensao.jpg";
 const services = [
   {
     icon: Settings,
+    title: "Revisões em Geral",
+    description: "Revisão completa preventiva e corretiva",
+    image: servicoRevisao,
+  },
+  {
+    icon: Settings,
     title: "Suspensão",
     description: "Alinhamento, balanceamento e reparos completos",
     image: servicoSuspensao,
@@ -79,12 +85,6 @@ const services = [
     title: "Injeção Eletrônica",
     description: "Diagnóstico e reparo de sistemas de injeção",
     image: servicoInjecao,
-  },
-  {
-    icon: Settings,
-    title: "Revisões em Geral",
-    description: "Revisão completa preventiva e corretiva",
-    image: servicoRevisao,
   },
 ];
 
